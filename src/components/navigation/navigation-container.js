@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { withRouter } from "react-router";
 import { NavLink } from "react-router-dom";
 
@@ -20,7 +21,7 @@ const NavigationComponent = (props) => {
       .then((response) => {
         if (response.status === 200) {
           props.history.push("/");
-          props.handleSuccessfullLogout();
+          props.handleSuccessfulLogout();
         }
         return response.data;
       })
@@ -37,11 +38,13 @@ const NavigationComponent = (props) => {
             Home
           </NavLink>
         </div>
+
         <div className="nav-link-wrapper">
           <NavLink to="/about-me" activeClassName="nav-link-active">
             About
           </NavLink>
         </div>
+
         <div className="nav-link-wrapper">
           <NavLink to="/contact" activeClassName="nav-link-active">
             Contact
@@ -60,9 +63,11 @@ const NavigationComponent = (props) => {
       </div>
 
       <div className="right-side">
-        Jayden Dyer
+        JAYDEN DYER
         {props.loggedInStatus === "LOGGED_IN" ? (
-          <a onClick={handleSignOut}>Sign Out</a>
+          <a onClick={handleSignOut}>
+            <FontAwesomeIcon icon="sign-out-alt" />
+          </a>
         ) : null}
       </div>
     </div>
