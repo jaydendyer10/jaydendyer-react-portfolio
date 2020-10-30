@@ -47,9 +47,7 @@ export default class BlogDetail extends Component {
             <img src={featured_image_url} />
           </div>
 
-          <div className="content">
-            <div>{content}</div>
-          </div>
+          <div className="content">{content}</div>
         </div>
       </div>
     );
