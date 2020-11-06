@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Login from "../auth/login";
 import loginImg from "../../../static/assets/images/auth/login.jpg";
 
-class Auth extends Component {
+export default class Auth extends Component {
   constructor(props) {
     super(props);
 
@@ -16,7 +16,7 @@ class Auth extends Component {
   }
 
   handleUnsuccessfulAuth() {
-    this.props.handleUnsuccessfulLogin;
+    this.props.handleUnsuccessfulLogin();
   }
 
   render() {
@@ -39,5 +39,3 @@ class Auth extends Component {
     );
   }
 }
-
-export default Auth;
